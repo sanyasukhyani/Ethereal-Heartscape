@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For the sunshine in my darkest days.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #a087f3, #e6ccc4);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(218, 191, 191, 0.8);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 300px;
+            height: 150px;
+            margin: 25px auto;
+            perspective: 1000px;
+            cursor: pointer;
+            transition: transform 0.7s;
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(50, 46, 46, 0.2);
+            transition: transform 0.6s;
+        }
+
+        .card-front {
+            background: #3d5270;
+            color: #e2e3fe;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .card-back {
+            background: #3b4766;
+            color: #fff;
+            font-size: 1em;
+            padding: 10px;
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+
+        .card.flipped .card-front {
+            transform: rotateY(180deg);
+        }
+
+        .card.flipped .card-back {
+            transform: rotateY(0);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(206, 133, 148, 0.4);
+        }
+
+        .signature {
+            font-style: italic;
+        }
+
+        /* Falling hearts animation */
+        .heart {
+            position: absolute;
+            top: -10%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall 10s linear infinite;
+            color: #ff94b3;
+            font-size: 20px;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Customize heart shapes and size */
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+        .heart:nth-child(2) {
+            left: 30%;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+        .heart:nth-child(3) {
+            left: 50%;
+            animation-duration: 16s;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(4) {
+            left: 70%;
+            animation-duration: 18s;
+            animation-delay: 4s;
+        }
+        .heart:nth-child(5) {
+            left: 90%;
+            animation-duration: 20s;
+            animation-delay: 5s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Falling hearts -->
+    <div class="heart">🤍</div>
+    <div class="heart">💌</div>
+    <div class="heart">🤍</div>
+    <div class="heart">💌</div>
+    <div class="heart">🤍</div>
+
+    <div class="container">
+        <h1 class="title">For the sunshine in my darkest days.</h1>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front">Tap to Open</div>
+            <div class="card-back">
+                I know I can be a bit rough at times, but I want you to know that I am sorry for all the shitty times my anger hurt you. It definitely isn't Sanya i mean you better know she's just your lil kid.(A kid who can make kids for you{with you.})
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front">Tap to Open</div>
+            <div class="card-back">
+                You are the ultimate kohinoor, Haha. Which adds value to my existence. 
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-front">Tap to Open</div>
+            <div class="card-back">
+                Through every storm and tear, my heart will always be yours. You’re my calm, my strength, my forever. No matter what, I’ll hold onto you endlessly and completely.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('flipped');
+
+        }
+    </script>
+</body>
+</html>
